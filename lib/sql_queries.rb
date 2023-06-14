@@ -1,33 +1,33 @@
+
+
+
 def selects_all_female_bears_return_name_and_age
-  "Write your SQL query here"
   <<-SQL
-  SELECT
-  bears.name,
-  bears.age
-  FROM 
-  bears
-  WHERE
-  sex='F';
-SQL
-
-  
-end
-
-def selects_all_bears_names_and_orders_in_alphabetical_order
-  "Write your SQL query here"
-  <<-SQL
-SELECT
-bears.name
+SELECT 
+bears.name,
+bears.age
 FROM
 bears
-ORDER BY bears.name ASC;
+WHERE sex = "F"
 
   SQL
-
 end
 
+
+
+
+  
+def selects_all_bears_names_and_orders_in_alphabetical_order
+  <<-SQL
+  SELECT bears.name
+  FROM
+  bears
+  ORDER BY name
+  SQL
+end
+
+
 def selects_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest
-  "Write your SQL query here"
   <<-SQL
 SELECT
 bears.name,
@@ -37,54 +37,129 @@ bears
 WHERE
 alive = 1
 ORDER BY
- bears.age ASC;
-
-
-
+age
   SQL
 end
 
 def selects_oldest_bear_and_returns_name_and_age
-  "Write your SQL query here"
+  <<-SQL
+  SELECT
+  bears.name,
+  bears.age
+  FROM
+  bears
+  ORDER BY 
+  age
+  DESC
+  LIMIT
+  1
+  SQL
+end
+
+
+
+
+def select_youngest_bear_and_returns_name_and_age
   <<-SQL
 SELECT 
 bears.name,
 bears.age
 FROM
 bears
-ORDER BY bears.age 
-
-DESC LIMIT 1;
-
-  SQL
-end
-
-def select_youngest_bear_and_returns_name_and_age
-  "Write your SQL query here"
-  <<-SQL
-SELECT
-bears.name,
-bears.age
-FROM
-bears
 ORDER BY
-bears.age
-ASC LIMIT 1;
+age
+LIMIT
+1
   SQL
 end
 
-# SELECT name FROM cats;
-# SELECT cats.name FROM cats;
+# def selects_all_female_bears_return_name_and_age
+#   "Write your SQL query here"
+#   <<-SQL
+#   SELECT
+#   bears.name,
+#   bears.age
+#   FROM 
+#   bears
+#   WHERE
+#   sex='F';
+# SQL
 
-# CREATE TABLE dogs (
-#   id INTEGER PRIMARY KEY,
-#   name TEXT
-# );
+  
+# end
 
-# INSERT INTO dogs (name) VALUES ("clifford")
+# def selects_all_bears_names_and_orders_in_alphabetical_order
+#   "Write your SQL query here"
+#   <<-SQL
+# SELECT
+# bears.name
+# FROM
+# bears
+# ORDER BY bears.name ASC;
+
+#   SQL
+
+# end
+
+# def selects_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest
+#   "Write your SQL query here"
+#   <<-SQL
+# SELECT
+# bears.name,
+# bears.age
+# FROM
+# bears
+# WHERE
+# alive = 1
+# ORDER BY
+#  bears.age ASC;
 
 
-# SELECT cats.name, dogs.name FROM cats, dogs;
+
+#   SQL
+# end
+
+# def selects_oldest_bear_and_returns_name_and_age
+#   "Write your SQL query here"
+#   <<-SQL
+# SELECT 
+# bears.name,
+# bears.age
+# FROM
+# bears
+# ORDER BY bears.age 
+
+# DESC LIMIT 1;
+
+#   SQL
+# end
+
+# def select_youngest_bear_and_returns_name_and_age
+#   "Write your SQL query here"
+#   <<-SQL
+# SELECT
+# bears.name,
+# bears.age
+# FROM
+# bears
+# ORDER BY
+# bears.age
+# ASC LIMIT 1;
+#   SQL
+# end
+
+# # SELECT name FROM cats;
+# # SELECT cats.name FROM cats;
+
+# # CREATE TABLE dogs (
+# #   id INTEGER PRIMARY KEY,
+# #   name TEXT
+# # );
+
+# # INSERT INTO dogs (name) VALUES ("clifford")
+
+
+# # SELECT cats.name, dogs.name FROM cats, dogs;
 
 
 
